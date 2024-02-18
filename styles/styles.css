@@ -82,3 +82,29 @@
 .theme-bg {
     background: rgb(29, 209, 0);
 }
+
+.tomato {
+    border: 2px solid tomato;
+}
+
+.grey-text {
+    color: rgba(3, 7, 18, 0.6);
+}
+
+.text-green {
+    color: rgb(29, 209, 0);
+}
+
+.bg-lightgreen {
+    background: rgba(29, 209, 0, 0.15);
+}
+
+.dashed-border {
+    border-bottom: 1px dashed rgba(3, 7, 18, 0.2);
+}
+
+hr {
+    max-width: 95%;
+    margin: 0 auto;
+    border: 1px dashed rgba(3, 7, 18, 0.2);
+}
