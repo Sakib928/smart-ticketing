@@ -108,3 +108,10 @@ hr {
     margin: 0 auto;
     border: 1px dashed rgba(3, 7, 18, 0.2);
 }
+
+.btn-seat {
+    height: 56px;
+    width: 110px;
+    background-color: #F7F8F8;
+    padding: 12px;
+}
