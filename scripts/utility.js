@@ -65,3 +65,6 @@ function showElement(elementId) {
     let element = document.getElementById(elementId).classList;
     element.remove("hidden");
 }
+function refresh() {
+    location.reload();
+}
