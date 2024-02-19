@@ -41,30 +41,14 @@ for (let i = 0; i < 40; i++) {
             window.alert("Maxium seat limit reached");
             return 0;
         }
+        if (bookedSeats >= 1) {
+            let numCheck = document.getElementById('number');
+            numCheck.addEventListener('input', function () {
+                buttonEnabler("next");
+            })
+        }
     })
 }
-let nameCheck = document.getElementById('name');
-let nameOkay = 0;
-nameCheck.addEventListener('input', function () {
-    nameOkay = 1;
-})
-let numCheck = document.getElementById('number');
-let numOkay = 1;
-numCheck.addEventListener('input', function () {
-    let numText = document.getElementById('number').value;
-    for (let i = 0; i < numText.length; i++) {
-        let check = numText.charCodeAt(i);
-        if (check < 48 || check > 57) {
-            numOkay = 0;
-            alert("Invalid number.Refresh and try again");
-            break;
-        }
-    }
-    if (nameOkay == 1 && numOkay == 1) {
-        buttonEnabler("next");
-    }
-})
-
 const next = document.getElementById('next');
 console.log(next)
 next.addEventListener('click', function () {
