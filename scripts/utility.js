@@ -1,7 +1,6 @@
 function selectionColor(elementId) {
     const element = document.getElementById(elementId).classList;
     element.add('theme-bg');
-    console.log(element);
 }
 function setText(elementId, value) {
     const element = document.getElementById(elementId);
@@ -11,9 +10,13 @@ function buttonEnabler(buttonId) {
     const button = document.getElementById(buttonId).classList;
     button.remove("btn-disabled");
 }
+function buttonDisabler(buttonId) {
+    const button = document.getElementById(buttonId).classList;
+    button.add("btn-disabled");
+}
 
-function tableCreate(tableID, seatID) {
-    const table = document.getElementById(tableID);
+function tableCreate(seatID) {
+    const table = document.getElementById("thead");
     let newTableData = document.createElement('tr');
     let th1 = document.createElement('th');
     th1.innerText = document.getElementById(seatID).innerText;
@@ -28,4 +31,37 @@ function tableCreate(tableID, seatID) {
     newTableData.appendChild(th3);
     table.appendChild(newTableData);
 
+}
+function discountEnable(coupon, totalPrice) {
+    showElement('discount-row');
+    if (coupon === "NEW15") {
+        let discountPrice = totalPrice * 0.15;
+        const grandTotal = totalPrice - discountPrice;
+        setText('grand-total', grandTotal);
+        let place = document.getElementById('discount');
+        place.innerText = discountPrice;
+        hideElement('coupon-field');
+        return;
+    }
+    if (coupon === "Couple 20") {
+        let discountPrice = totalPrice * 0.20;
+        const grandTotal = totalPrice - discountPrice;
+        setText('grand-total', grandTotal);
+        let place = document.getElementById('discount');
+        place.innerText = discountPrice;
+        hideElement('coupon-field');
+        return;
+    }
+    else {
+        window.alert("Enter a valid coupon code");
+        hideElement('discount-row');
+    }
+}
+function hideElement(elementId) {
+    let element = document.getElementById(elementId).classList;
+    element.add("hidden");
+}
+function showElement(elementId) {
+    let element = document.getElementById(elementId).classList;
+    element.remove("hidden");
 }

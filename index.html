@@ -40,7 +40,7 @@
                     <li class="lg:text-lg"><a>Search</a></li>
                 </ul>
             </div>
-            <div class="navbar-end">
+            <div class="navbar-end" id="nav-btn">
                 <a class="btn text-green-500 raleway-bold raleway-bold bg-green-100">Bus<img src="images/bus-icon.png"
                         alt=""></a>
             </div>
@@ -329,15 +329,20 @@
                                 <td></td>
                                 <td class="inter-medium text-sm" id="total-price">000</td>
                             </tr>
+                            <tr class="hidden" id="discount-row">
+                                <td class="inter-medium text-sm">Discount</td>
+                                <td></td>
+                                <td class="inter-medium text-sm" id="discount">000</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <!-- coupons and calculations -->
-                <div class="flex bg-white py-3 px-3">
+                <div class="flex bg-white py-3 px-3" id="coupon-field">
                     <input type="text" placeholder="Have a coupon?"
-                        class="input w-full max-w-xs border-1 border-slate-400" />
+                        class="input w-full max-w-xs border-1 border-slate-400" id="coupon-code" />
                     <button class="btn bg-[#1dd100] text-white inter-semibold text-sm btn-disabled"
-                        id="Apply">Apply</button>
+                        id="apply">Apply</button>
                 </div>
                 <div class="flex justify-between mx-auto p-4 mb-4">
                     <h1 class="inter-medium text-sm">Grand Total</h1>
@@ -347,19 +352,19 @@
                 <div class="">
                     <label for="name" class="inter-semibold text-sm">Passenger name*</label>
                     <input type="text" id="name" placeholder="Enter your name"
-                        class="input input-bordered input-md w-full max-w-xs mt-3 mb-4" />
+                        class="input input-bordered input-md w-full max-w-xs mt-3 mb-4 " />
                 </div>
                 <div class="">
-                    <label for="number" class="pr-[10px] inter-semibold text-sm">Phoner number*</label>
-                    <input type="number" id="number" placeholder="Enter your phone number"
-                        class="input input-bordered input-md w-full max-w-xs mt-3 mb-4" />
+                    <label for="number" class="pr-[10px] inter-semibold text-sm ">Phone number*</label>
+                    <input type="text" id="number" placeholder="Enter your phone number"
+                        class="input input-bordered input-md w-full max-w-xs mt-3 mb-4 " />
                 </div>
                 <div class="">
-                    <label for="name" class="pr-16 inter-semibold text-sm">Email ID </label>
-                    <input type="number" id="number" placeholder="Enter your email ID"
+                    <label for="email" class="pr-16 inter-semibold text-sm">Email ID </label>
+                    <input type="email" id="email" placeholder="Enter your email ID"
                         class="input input-bordered input-md w-full max-w-xs mt-3 mb-4" />
                 </div>
-                <button class="btn w-full theme-bg raleway-extrabold btn-disabled" id="Next">Next</button>
+                <button class="btn w-full theme-bg raleway-extrabold btn-disabled" id="next">Next</button>
                 <!-- terms and conditions -->
                 <div class="flex justify-around my-3">
                     <a class="link link-neutral grey-text inter-regular text-sm">Terms and Conditions</a>
@@ -384,6 +389,21 @@
         </div>
     </nav>
 </footer>
+<!-- Open the modal using ID.showModal() method -->
+<dialog id="my_modal_1" class="modal">
+    <div class="modal-box">
+        <div class="flex justify-center">
+            <img src="images/success.png" alt="">
+        </div>
+        <p class="py-4 text-center inter-bold">Booking Successful!</p>
+        <div class="modal-action">
+            <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn theme-bg">Close</button>
+            </form>
+        </div>
+    </div>
+</dialog>
 
 <body>
     <script src="scripts/smart-ticket.js"></script>
